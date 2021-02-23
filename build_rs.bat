@@ -1,6 +1,6 @@
 @echo off
 
-set DEVICE_TARGET=Soni
+set DEVICE_TARGET=RealSense
 cd /D %~dp0
 
 set BUILD_TARGET=KinectWrapper.pde

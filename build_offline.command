@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVICE_TARGET="Soni"
+DEVICE_TARGET="Offline"
 
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
