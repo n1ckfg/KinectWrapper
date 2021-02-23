@@ -2,7 +2,7 @@
 
 set DEVICE_TARGET=RealSense
 cd /D %~dp0
-cd ..
+cd ..\..
 
 set BUILD_TARGET=KinectWrapper.pde
 del %BUILD_TARGET%

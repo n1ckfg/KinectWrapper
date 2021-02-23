@@ -11,7 +11,7 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd $DIR
-cd ..
+cd ../..
 
 BUILD_TARGET="KinectWrapper.pde"
 rm $BUILD_TARGET

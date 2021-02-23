@@ -1,8 +1,8 @@
 @echo off
 
-set DEVICE_TARGET=Offline
+set DEVICE_TARGET=Soni
 cd /D %~dp0
-cd ..
+cd ..\..
 
 set BUILD_TARGET=KinectWrapper.pde
 del %BUILD_TARGET%
