@@ -1,3 +1,6 @@
+// OFFLINE
+// OS: Win, Mac, Linux / SDK: None / Devices: None
+
 class KinectOffline {
   
   PApplet parent;

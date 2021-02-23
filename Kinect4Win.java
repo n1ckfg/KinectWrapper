@@ -1,51 +1,43 @@
-// SIMPLEOPENNI 
-// OS: Win, Mac, Linux / SDK: OpenNI, MS 1.8 / Devices: Kinect v1, clones
+// KINECT4WIN
+// OS: Win / SDK: MS 1.8 / Devices: Kinect v1
 
-import SimpleOpenNI.*;
+import kinect4WinSDK.Kinect;
+import kinect4WinSDK.SkeletonData;
 
-class KinectSoni {
+class Kinect4Win {
   
   PApplet parent;
-  SimpleOpenNI device;
+  Kinect device;
   boolean isOffline = false;
   PImage depthImg, contourImg;
 
-  KinectSoni(PApplet _parent) {
+  Kinect4Win(PApplet _parent) {
     parent = _parent;
-    //device = new SimpleOpenNI(parent);
-    device = new SimpleOpenNI(parent, SimpleOpenNI.RUN_MODE_MULTI_THREADED);
+    device = new Kinect(parent);
 
-    setMirror(false);
-    enableDepth();
-    //enableIR();
-    //enableUser();
-    enableRGB();
-    alternativeViewPointDepthToImage();
+    //device.setMirror(false);
+    //device.enableDepth();
+    //device.enableIR();
+    //device.enableUser();
+    //device.enableRGB();
+    //device.alternativeViewPointDepthToImage();
+    //device.setDepthColorSyncEnabled(true);
   }
   
-  void setMirror(boolean b) {
-    device.setMirror(b);
-  }
-
   void enableDepth() {
-    device.enableDepth();
+    //device.enableDepth();
   }
 
   void enableRGB() {
-    device.enableRGB();
-  }
-
-  void enableIR() {
-    device.enableIR();
+    //device.enableDepth();
   }
 
   void enableUser() {
-    device.enableUser();
+    //device.enableUser();
   }
   
   void alternativeViewPointDepthToImage() {
     device.alternativeViewPointDepthToImage();
-    device.setDepthColorSyncEnabled(true);
   }
   
   int depthWidth() {
@@ -61,11 +53,11 @@ class KinectSoni {
   }
   
   PImage rgbImage() {
-    return device.rgbImage();
+    return device.GetImage();
   }
   
   PImage depthImage() {
-    return device.depthImage();
+    return device.GetDepth();
   }
   
   PImage userImage() {

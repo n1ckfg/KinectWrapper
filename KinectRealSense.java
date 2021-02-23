@@ -1,3 +1,6 @@
+// REALSENSE 
+// OS: Win, Mac, Linux / SDK: RealSense 2 / Devices: RealSense 4xx, 5xx
+
 import ch.bildspur.realsense.*;
 import ch.bildspur.realsense.type.*;
 import org.intel.rs.frame.DepthFrame;
@@ -24,19 +27,13 @@ class KinectRealSense {
     device = new RealSenseCamera(parent);
     
     //device.setMirror(false);
-    device.enableDepthStream();
-    // https://intelrealsense.github.io/librealsense/doxygen/classrs2_1_1colorizer.html
-    // a colorizer setting is required to display depth images:
-    // 0 - Jet,  1 - Classic, 2 - WhiteToBlack, 3 - BlackToWhite, 4 - Bio, 5 - Cold, 6 - Warm, 7 - Quantized, 8 - Pattern, 9 - Hue
-    device.enableColorizer(ColorScheme.WhiteToBlack); 
-    //device.addHoleFillingFilter();
-    //device.addSpatialFilter();
-    //device.addTemporalFilter();
-    //device.enableIRStream();
-    //device.enableUser();
-    device.enableColorStream();
-    //device.alternativeViewPointDepthToImage();
-    device.enableAlign();
+    enableDepth();
+
+    //enableIR();
+    //enableUser();
+    enableRGB();
+    alternativeViewPointDepthToImage();
+    
     device.start();
 
     pointCloud = new PointCloud();
@@ -46,6 +43,26 @@ class KinectRealSense {
 
   void enableDepth() {
     device.enableDepthStream();
+    
+    // https://intelrealsense.github.io/librealsense/doxygen/classrs2_1_1colorizer.html
+    // a colorizer setting is required to display depth images:
+    // 0 - Jet,  1 - Classic, 2 - WhiteToBlack, 3 - BlackToWhite, 4 - Bio, 5 - Cold, 6 - Warm, 7 - Quantized, 8 - Pattern, 9 - Hue
+    device.enableColorizer(ColorScheme.WhiteToBlack); 
+    //device.addHoleFillingFilter();
+    //device.addSpatialFilter();
+    //device.addTemporalFilter();
+  }
+
+  void setMirror(boolean b) {
+    //device.setMirror(b);
+  }
+
+  void enableRGB() {
+    device.enableColorStream();
+  }
+
+  void enableIR() {
+    device.enableIRStream();
   }
 
   void enableUser() {
