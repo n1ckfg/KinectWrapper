@@ -94,8 +94,8 @@ class KinectRealSense {
     
     for (int i=0; i<returns.length; i++) {
       Vertex v = vertices[i];
-      // all axes in OpenNI are flipped vs. RS, and scale is mm instead of m.
-      returns[i] = new PVector(-v.getX(), -v.getY(), -v.getZ()).mult(1000);
+      // y axis in OpenNI is flipped vs. RS, and scale is mm instead of m.
+      returns[i] = new PVector(v.getX(), -v.getY(), v.getZ()).mult(1000);
     }
     
     return returns;
