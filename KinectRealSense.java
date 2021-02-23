@@ -29,8 +29,8 @@ class KinectRealSense {
     // a colorizer setting is required to display depth images:
     // 0 - Jet,  1 - Classic, 2 - WhiteToBlack, 3 - BlackToWhite, 4 - Bio, 5 - Cold, 6 - Warm, 7 - Quantized, 8 - Pattern, 9 - Hue
     device.enableColorizer(ColorScheme.WhiteToBlack); 
-    device.addHoleFillingFilter();
-    //device.addSpatialFilter();
+    //device.addHoleFillingFilter();
+    device.addSpatialFilter();
     //device.addTemporalFilter();
     //device.enableIRStream();
     //device.enableUser();
