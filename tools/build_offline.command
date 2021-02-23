@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVICE_TARGET="Soni"
+DEVICE_TARGET="Offline"
 
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
@@ -11,6 +11,7 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd $DIR
+cd ..
 
 BUILD_TARGET="KinectWrapper.pde"
 rm $BUILD_TARGET
