@@ -8,7 +8,6 @@ class KinectSoni {
   PApplet parent;
   SimpleOpenNI device;
   boolean isOffline = false;
-  PImage depthImg, contourImg;
 
   KinectSoni(PApplet _parent) {
     parent = _parent;

@@ -9,7 +9,6 @@ class KinectOpen {
   PApplet parent;
   Kinect device;
   boolean isOffline = false;
-  PImage depthImg, contourImg;
 
   KinectOpen(PApplet _parent) {
     parent = _parent;
@@ -20,7 +19,6 @@ class KinectOpen {
     enableRGB();
     //enableIR();
     //enableUser();
-    enableRGB();
   }
   
   void setMirror(boolean b) {
@@ -36,11 +34,11 @@ class KinectOpen {
   }
 
   void enableIR() {
-    device.enableIR();
+    device.initIR();
   }
 
   void enableUser() {
-    device.enableUser();
+    device.initUser();
   }
   
   void alternativeViewPointDepthToImage() {
@@ -68,11 +66,11 @@ class KinectOpen {
   }
   
   PImage userImage() {
-    return device.userImage();
+    return device.getUserImage();
   }
   
   PImage irImage() {
-    return device.irImage();
+    return device.getIrImage();
   }
   
   PVector[] depthMapRealWorld() {

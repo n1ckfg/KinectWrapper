@@ -9,7 +9,6 @@ class Kinect4Win {
   PApplet parent;
   Kinect device;
   boolean isOffline = false;
-  PImage depthImg, contourImg;
 
   Kinect4Win(PApplet _parent) {
     parent = _parent;

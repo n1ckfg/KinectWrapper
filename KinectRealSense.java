@@ -20,7 +20,6 @@ class KinectRealSense {
   Vertex[] vertices;
   
   boolean isOffline = false;
-  PImage depthImg, contourImg;
 
   KinectRealSense(PApplet _parent) {
     parent = _parent;

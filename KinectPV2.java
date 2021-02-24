@@ -8,7 +8,6 @@ class KinectPV2 {
   PApplet parent;
   KinectPV2 device;
   boolean isOffline = false;
-  PImage depthImg, contourImg;
 
   KinectPV2(PApplet _parent) {
     parent = _parent;
