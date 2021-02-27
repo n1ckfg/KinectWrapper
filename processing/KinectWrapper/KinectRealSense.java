@@ -13,7 +13,7 @@ class KinectRealSense {
   PApplet parent;
   RealSenseCamera device;
   int vertCount = 0;
-
+  int whichIrStream = 0;
   PointCloud pointCloud;
   DepthFrame depthFrame;
   Points points;
@@ -61,7 +61,14 @@ class KinectRealSense {
   }
 
   void enableIR() {
-    device.enableIRStream();
+  	switch (whichIrStream) {
+  		case 1:
+    		device.enableIRStream(640, 480, 30, IRStream.Second);
+  			break;
+  		default:
+    		device.enableIRStream();
+  			break;
+	}
   }
 
   void enableUser() {
@@ -97,7 +104,12 @@ class KinectRealSense {
   }
   
   PImage irImage() {
-    return device.getIRImage();
+  	switch (whichIrStream) {
+  		case 1:
+    		return device.getIRImage(IRStream.Second);
+    	default:
+    		return device.getIRImage();
+	}
   }
   
   PVector[] depthMapRealWorld() {
